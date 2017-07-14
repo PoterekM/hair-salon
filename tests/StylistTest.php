@@ -17,6 +17,12 @@
 
     class StylistTest extends PHPUnit_Framework_TestCase
     {
+        protected function tearDown()
+        {
+            Client::deleteAll();
+            Stylist::deleteAll();
+        }
+
         function testGetId()
         {
             //Arrange
@@ -57,11 +63,6 @@
         }
 
 
-        protected function tearDown()
-        {
-            Stylist::deleteAll();
-            //hey, eventually you'll need one for the clients, too
-        }
 
         function testSave()
         {

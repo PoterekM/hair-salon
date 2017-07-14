@@ -16,31 +16,58 @@
 
     class ClientTest extends PHPUnit_Framework_TestCase
     {
-        // protected function tearDown()
-        // {
-        //     Client::deleteAll();
-        //     Stylist::deleteAll();
-        // }
+        protected function tearDown()
+        {
+            Client::deleteAll();
+            Stylist::deleteAll();
+        }
 
         function testSave()
         {
-            // //Arrange
-            // $stylist = "hodor";
-            // $test_client = new Client($stylist);
-            // $test_client->save();
-            // $stylist_id = $test_stylist->getId();
-            //
-            // $name = "clientwithgreatname";
-            // $number = 1234567890;
-            // $appointment = 2017-12-08;
-            // $test_client = new Client($name, $number, $appointment, $stylist_id);
-            // $test_client->save();
-            //
-            // //Act
-            // $executed = $test_client->save();
-            //
-            // //Assert
-            // $this->assertTrue($executed, "Client not saved to database, braaaah");
+            //Arrange
+            $stylist = "hodor";
+            $test_client = new Client($stylist);
+            $test_client->save();
+            $stylist_id = $test_stylist->getId();
+
+            $name = "clientwithgreatname";
+            $number = 1234567890;
+            $appointment = 2017-12-08;
+            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client->save();
+
+            //Act
+            $executed = $test_client->save();
+
+            //Assert
+            $this->assertTrue($executed, "Client not saved to database, braaaah");
+        }
+
+        function testDeleteAll()
+        {
+            $stylist = "hodor";
+            $test_client = new Client($stylist);
+            $test_client->save();
+            $stylist_id = $test_stylist->getId();
+
+            $name = "clientwithgreatname";
+            $number = 1234567890;
+            $appointment = 2017-12-08;
+            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client->save();
+
+            $name2 = "clientwithgreatname";
+            $number2 = 1234567890;
+            $appointment2 = 2017-12-08;
+            $test_client2 = new Client($name2, $number2, $appointment2, $stylist_id2);
+            $test_client2->save();
+
+            //Act
+            Client::deleteAll();
+            $result = Client::getAll();
+            //Assert
+            $this->assertEquals([], $result);
+
         }
 
 
