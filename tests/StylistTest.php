@@ -49,7 +49,7 @@
             $test_stylist->save();
 
             //Act
-            $restult = $test_stylist->getId();
+            $result = $test_stylist->getId();
 
             //Assert
             $this->assertTrue(is_numeric($result));
@@ -97,7 +97,7 @@
             Stylist::deleteAll();
             $restult = Stylist::getAll();
 
-            $this->assertEquals([]. $result);
+            $this->assertEquals([], $result);
 
         }
 
