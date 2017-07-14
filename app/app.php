@@ -7,11 +7,20 @@
     $password = 'root';
     $DB = new PDO($server, $username, $password);
 
-    $app = new Silex\Application();
+    use Symfony\Componenet\Debug\Debug;
+    Debug::enable();
 
+
+    $app = new Silex\Application();
+    $app['debug'] = true;
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         'twig.path' => __DIR__.'/../views'
     ));
+
+    $app->get("/", function() use($app){
+        return $app['twig']->render('index.html.twig', array(Stylist::getAll()));
+    });
+
 
     // routes
 
