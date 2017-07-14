@@ -73,10 +73,10 @@
 
         function testGetName()
         {
-            $stylist = "boo";
-            $test_stylist = new Stylist($stylist);
-            $test_stylist->save();
-            $stylist_id = $test_stylist->getId()
+            // $stylist = "boo";
+            // $test_stylist = new Stylist($stylist);
+            // $test_stylist->save();
+            // $stylist_id = $test_stylist->getId()
 
             $name = "clientwithgreatname";
             $number = 1234567890;
@@ -87,8 +87,22 @@
             $result = $test_client->getName();
 
             $this->assertEquals($name, $result);
+        }
 
+        function testSetName()
+        {
+            $name = "yabadabado";
+            $number = 8484848;
+            $appointment = 2017-10-08;
+            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client->save();
 
+            $new_name = "Trishia";
+
+            $test_client->setName($new_name);
+            $result = $test_client->getName();
+
+            $this->assertEquals($new_name, $result);
         }
 
 
