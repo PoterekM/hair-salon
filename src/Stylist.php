@@ -27,7 +27,7 @@
 
         function save()
         {
-            $execued = $GLOBALS['DB']->exec("INSERT INTO stylist (stylist) VALUES ('{$this->getStylist()}');");
+            $execued = $GLOBALS['DB']->exec("INSERT INTO stylists (stylist) VALUES ('{$this->getStylist()}');");
             if ($executed) {
                 return true;
             } else {
@@ -35,10 +35,10 @@
             }
         }
 
-        static function getAll()
-        {
-            $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylist;");
-        }
+        // static function getAll()
+        // {
+        //     $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM ;");
+        // }
 
 
     }
