@@ -3,15 +3,15 @@
     {
         private $name;
         private $number;
-        private $date;
+        private $appointment;
         private $client_id;
         private $id;
 
-        function __construct($name, $number, $date, $client_id, $id = null)
+        function __construct($name, $number, $appointment, $client_id, $id = null)
         {
             $this->name = $name;
             $this->number = $number;
-            $this->date = $date;
+            $this->appointment = $appointment;
             $this->client_id = $client_id;
             $this->id = $id;
         }
@@ -38,17 +38,17 @@
 
         function setNumber($new_number)
         {
-            $this->number = intval($new_number)
+            $this->number = intval($new_number);
         }
 
-        function getDate()
+        function getAppointment()
         {
-            return $this->date;
+            return $this->appointment;
         }
 
-        function setDate($new_date)
+        function setDate($new_appointment)
         {
-            $this->date = (string) $new_date;
+            $this->appointment = (string) $new_appointment;
         }
 
         function getClientId()
@@ -61,10 +61,7 @@
             $this->client_id = intval($new_client_id);
         }
 
-        function getId()
-        {
-            return $this->id;
-        }
+
 
 
     }
