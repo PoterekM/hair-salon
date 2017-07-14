@@ -17,17 +17,17 @@
         'twig.path' => __DIR__.'/../views'
     ));
 
-    $app->get("/", function() use($app) {
-        return $app['twig']->render('index.html.twig', array(Stylist::getAll()));
-    });
-
-    $app->post("/", function() use ($app) {
-        $stylist = $_POST['stylist'];
-        $new_stylist = new Stylist($stylist);
-
-        $new_stylist->save();
-        return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
-    });
+    // $app->get("/", function() use($app) {
+    //     return $app['twig']->render('index.html.twig', array(Stylist::getAll()));
+    // });
+    //
+    // $app->post("/", function() use ($app) {
+    //     $stylist = $_POST['stylist'];
+    //     $new_stylist = new Stylist($stylist);
+    //
+    //     $new_stylist->save();
+    //     return $app['twig']->render('index.html.twig', array('stylists' => Stylist::getAll()));
+    // });
 
 
     // routes
