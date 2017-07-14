@@ -4,15 +4,15 @@
         private $name;
         private $number;
         private $appointment;
-        private $stylist_id;
+        // private $stylist_id;
         private $id;
 
-        function __construct($name, $number, $appointment, $stylist_id, $id = null)
+        function __construct($name, $number, $appointment, $id = null)
         {
             $this->name = $name;
             $this->number = $number;
             $this->appointment = $appointment;
-            $this->stylist_id = $stylist_id;
+            // $this->stylist_id = $stylist_id;
             $this->id = $id;
         }
 
@@ -26,7 +26,7 @@
             return $this->id;
         }
 
-        function setName($newName)
+        function setName($new_name)
         {
             $this->name = (string) $new_name;
         }
@@ -51,20 +51,26 @@
             return $this->appointment;
         }
 
+        function setAppointment($new_appointment)
+        {
+            $this->appointment = $new_appointment;
+        }
+
+
         function setDate($new_appointment)
         {
             $this->appointment = (string) $new_appointment;
         }
 
-        function getStylistId()
-        {
-            return $this->stylist_id;
-        }
-
-        function setStylistId($new_stylist_id)
-        {
-            $this->stylist_id = intval($new_stylist_id);
-        }
+        // function getStylistId()
+        // {
+        //     return $this->stylist_id;
+        // }
+        //
+        // function setStylistId($new_stylist_id)
+        // {
+        //     $this->stylist_id = intval($new_stylist_id);
+        // }
 
 
         function save()

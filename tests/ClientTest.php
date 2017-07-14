@@ -76,8 +76,9 @@
             $name = "clientwithgreatname";
             $number = 1234567890;
             $appointment = 2017-12-08;
-            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client = new Client($name, $number, $appointment);
             $test_client->save();
+
 
             $result = $test_client->getName();
 
@@ -89,7 +90,7 @@
             $name = "yabadabado";
             $number = 8484848;
             $appointment = 2017-10-08;
-            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client = new Client($name, $number, $appointment);
             $test_client->save();
 
             $new_name = "Trishia";
@@ -106,7 +107,7 @@
             $name = "clientwithgreatname";
             $number = 1234567890;
             $appointment = 2017-12-08;
-            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client = new Client($name, $number, $appointment);
             $test_client->save();
 
             $result = $test_client->getNumber();
@@ -119,12 +120,12 @@
             $name = "yabadabado";
             $number = 8484848;
             $appointment = 2017-10-08;
-            $test_client = new Client($name, $number, $appointment, $stylist_id);
+            $test_client = new Client($name, $number, $appointment);
             $test_client->save();
 
             $new_number = "6663336363";
 
-            $test_client->setNumber($new_name);
+            $test_client->setNumber($new_number);
             $result = $test_client->getNumber();
 
             $this->assertEquals($new_number, $result);
@@ -153,7 +154,7 @@
                 $name = "yabadabado";
                 $number = 8484848;
                 $appointment = 2017-10-08;
-                $test_client = new Client($name, $number, $appointment, $stylist_id);
+                $test_client = new Client($name, $number, $appointment);
                 $test_client->save();
 
                 $new_appointment = "Trishia";
