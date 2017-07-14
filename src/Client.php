@@ -4,15 +4,15 @@
         private $name;
         private $number;
         private $appointment;
-        private $client_id;
+        private $stylist_id;
         private $id;
 
-        function __construct($name, $number, $appointment, $client_id, $id = null)
+        function __construct($name, $number, $appointment, $stylist_id, $id = null)
         {
             $this->name = $name;
             $this->number = $number;
             $this->appointment = $appointment;
-            $this->client_id = $client_id;
+            $this->stylist_id = $stylist_id;
             $this->id = $id;
         }
 
@@ -36,6 +36,11 @@
             return $this->name;
         }
 
+        function getNumber()
+        {
+            return $this->number;
+        }
+
         function setNumber($new_number)
         {
             $this->number = intval($new_number);
@@ -51,17 +56,21 @@
             $this->appointment = (string) $new_appointment;
         }
 
-        function getClientId()
+        function getStylistId()
         {
-            return $this->client_id;
+            return $this->stylist_id;
         }
 
-        function setClientId($new_client_id)
+        function setStylistId($new_stylist_id)
         {
-            $this->client_id = intval($new_client_id);
+            $this->stylist_id = intval($new_stylist_id);
         }
 
 
+        function save()
+        {
+            $executed = $GLOBALS['DB']->exec("INSERT INTO clients (name, number, appointment) VALUES ('{$this->getName()}', {$this->getNumber()}, '{$this->getAppointment()}')");
+        }
 
         static function deleteAll()
         {
