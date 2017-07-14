@@ -9,6 +9,13 @@
       <label for="stylist">Please enter the name of your stylist:</label>
       <input type="text" name="stylist">
       <button type="submit" name="btn">Add them!</button>
+
+
+      {% for stylist in stylists %}
+        <li> {{ stylist.getStylist }} </li>
+      {% endfor %}
+
+
     </form>
   </body>
 </html>
