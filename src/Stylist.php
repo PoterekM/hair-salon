@@ -9,6 +9,7 @@
             $this->stylist = $stylist;
             $this->id = $id;
         }
+
         function getId()
         {
             return $this->id;
@@ -23,7 +24,6 @@
         {
             $this->stylist = (string) $new_stylist;
         }
-
 
 
 
