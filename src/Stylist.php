@@ -25,6 +25,20 @@
             $this->stylist = (string) $new_stylist;
         }
 
+        function save()
+        {
+            $execued = $GLOBALS['DB']->exec("INSERT INTO stylist (stylist) VALUES ('{$this->getStylist()}');");
+            if ($executed) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        static function getAll()
+        {
+            $returned_stylists = $GLOBALS['DB']->query("SELECT * FROM stylist;");
+        }
 
 
     }
