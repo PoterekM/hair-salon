@@ -29,19 +29,24 @@
 
         }
 
-        // function testGetStylist()
+        function testGetId()
+        {
+            //Arrange
+            $stylist = "Drew";
+            $test_stylist = new Stylist($stylist);
+            $test_stylist->save();
+
+            //Act
+            $restult = $test_stylist->getId();
+
+            //Assert
+            $this->assertTrue(is_numeric($result));
+        }
+
+        // function testSetStylist()
         // {
         //     //Arrange
-        //
-        //     //Act
-        //
-        //     //Assert
-        //
-        // }
-        //
-        // function testGetStylist()
-        // {
-        //     //Arrange
+        //     $stylist = "Billi";
         //
         //     //Act
         //
