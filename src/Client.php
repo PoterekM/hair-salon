@@ -63,7 +63,7 @@
 
 
 
-        function deleteAll()
+        static function deleteAll()
         {
             $executed = $GLOBALS['DB']->exec("DELETE FROM clients;"); {
                 if ($executed) {
