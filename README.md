@@ -19,3 +19,10 @@ to get access to the database in order to manipulate it: /Applications/MAMP/Libr
 
 
 DON'T FORGET TO EXPORT YOUR GOSH DARN PHPMYADMIN FILE
+
+
+$ cd ~/../../Applications/MAMP/logs/
+$ atom php_error.log
+
+
+** for some reason stylist input cannot have an apostrophe d

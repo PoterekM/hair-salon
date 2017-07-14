@@ -101,5 +101,19 @@
 
         }
 
+        function testFind()
+        {
+            $stylist = "YaYa";
+            $stylist2 = "Fifi";
+            $test_stylist = new Stylist($stylist);
+            $test_stylist->save();
+            $test_stylist2 = new Stylist($stylist2);
+            $test_stylist2->save();
+
+            $result = Stylist::find($test_stylist->getId());
+
+            $this->assertEquals($test_stylist, $result);
+        }
+
     }
 ?>
